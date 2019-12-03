@@ -4,3 +4,5 @@ django-heroku
 requests
 djangorestframework
 django-cors-headers
+python-dotenv
+whitenoise
