@@ -1,5 +1,4 @@
 django
 gunicorn
 django-heroku
-libpq-dev
 requests
