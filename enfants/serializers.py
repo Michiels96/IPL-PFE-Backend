@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Enfants, Handicaps, HandicapEnfant
+from .models import Enfants, Handicaps
 
 class HandicapSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,8 +11,3 @@ class EnfantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Enfants
         fields = ('enfant_id', 'nom', 'prenom', 'age', 'handicap', 'handicaps') 
-    
-class HandicapEnfantSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = HandicapEnfant
-        fields = ('handicap_enfant_id', 'enfant', 'handicap') 
