@@ -21,4 +21,4 @@ class Note(models.Model):
     question_id = models.ForeignKey(Question, on_delete=models.PROTECT) 
     note_aime = models.CharField(max_length=255, null=True)
     note_aide = models.CharField(max_length=255, null=True)
-    note_staisfaction = models.CharField(max_length=255, null=True)
+    note_statisfaction = models.CharField(max_length=255, null=True)
