@@ -5,7 +5,7 @@ class Handicap(models.Model):
     nom_handicap = models.CharField(max_length=250)
     description = models.CharField(max_length=250)
 
-class Enfant(models.Model):
+class Enfants(models.Model):
     enfant_id = models.AutoField(primary_key=True)
     nom = models.CharField(max_length=50)
     prenom = models.CharField(max_length=50)
@@ -14,5 +14,5 @@ class Enfant(models.Model):
 
 class HandicapEnfant(models.Model):
     handicap_enfant_id = models.AutoField(primary_key=True)
-    enfant = models.ForeignKey(Enfant, on_delete=models.PROTECT)
+    enfant = models.ForeignKey(Enfants, on_delete=models.PROTECT)
     handicap = models.ForeignKey(Handicap, on_delete=models.PROTECT)

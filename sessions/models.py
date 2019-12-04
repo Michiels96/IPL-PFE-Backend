@@ -2,7 +2,7 @@ from django.db import models
 
 class Session(models.Model):
     session_id = models.AutoField(primary_key=True)
-    enfant = models.ForeignKey('enfants.Enfant', related_name='enfant', on_delete=models.PROTECT)
+    enfant = models.ForeignKey('enfants.Enfants', related_name='enfant', on_delete=models.PROTECT)
     date = models.DateTimeField(auto_now_add=True)
 
 class Question(models.Model):
