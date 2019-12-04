@@ -1,2 +1,2 @@
 # pfefrontend
-Projet de fin d'études - frontend
+Projet de fin d'études - frontend.

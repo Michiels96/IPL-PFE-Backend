@@ -3,15 +3,16 @@ language: python # => 1
       - "2.6"
       - "2.7"
       - "3.7"
-    services: # => 3
+    #services: # => 3
       - mysql
-    env: # => 4
+    #env: # => 4
       -DJANGO=2.2.7 DB=sqlite3
-    install: # => 5
+    #install: # => 5
       - pip install -r requirements.txt
-    before_script: # => 6
+    #before_script: # => 6
       - mysql -e 'create database test;' -u root
     script: # => 7
+      - echo "hello"
       - python manage.py test
 
 #Explanation for above comments:
