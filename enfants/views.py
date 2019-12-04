@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
-from .models import Enfants, Handicap, HandicapEnfant
+from .models import Enfants, Handicaps, HandicapEnfant
 from .serializers import EnfantSerializer, HandicapSerializer, HandicapEnfantSerializer
 from rest_framework.response import Response
 
@@ -9,7 +9,7 @@ class EnfantsView(viewsets.ModelViewSet):
     serializer_class = EnfantSerializer
 
 class HandicapsView(viewsets.ModelViewSet):
-    queryset = Handicap.objects.all()
+    queryset = Handicaps.objects.all()
     serializer_class = HandicapSerializer
 
 class HandicapsEnfantsView(viewsets.ModelViewSet):

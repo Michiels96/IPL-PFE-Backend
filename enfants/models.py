@@ -1,6 +1,6 @@
 from django.db import models
 
-class Handicap(models.Model):
+class Handicaps(models.Model):
     handicap_id = models.AutoField(primary_key=True)
     nom_handicap = models.CharField(max_length=250)
     description = models.CharField(max_length=250)
@@ -15,4 +15,4 @@ class Enfants(models.Model):
 class HandicapEnfant(models.Model):
     handicap_enfant_id = models.AutoField(primary_key=True)
     enfant = models.ForeignKey(Enfants, on_delete=models.PROTECT)
-    handicap = models.ForeignKey(Handicap, on_delete=models.PROTECT)
+    handicap = models.ForeignKey(Handicaps, on_delete=models.PROTECT)
