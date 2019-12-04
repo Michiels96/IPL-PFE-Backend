@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Enfant, Handicap, HandicapEnfant
+from .models import Enfants, Handicaps
 
-admin.site.register(Enfant)
-admin.site.register(Handicap)
-admin.site.register(HandicapEnfant)
+admin.site.register(Enfants)
+admin.site.register(Handicaps)
