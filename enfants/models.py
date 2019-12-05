@@ -10,7 +10,6 @@ class Enfant(models.Model):
     nom = models.CharField(max_length=50)
     prenom = models.CharField(max_length=50)
     age = models.PositiveIntegerField()
-    handicap = models.ForeignKey(Handicap, related_name='handicaps', on_delete = models.PROTECT)
 
 class HandicapEnfant(models.Model):
     handicap_enfant_id = models.AutoField(primary_key=True)
