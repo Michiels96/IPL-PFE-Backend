@@ -7,10 +7,9 @@ class HandicapSerializer(serializers.ModelSerializer):
         fields = ('handicap_id', 'nom_handicap', 'description')
 
 class EnfantSerializer(serializers.ModelSerializer):
-    handicaps = serializers.CharField(source='handicap.nom_handicap', read_only=True)
     class Meta:
         model = Enfant
-        fields = ('enfant_id', 'nom', 'prenom', 'age', 'handicap', 'handicaps') 
+        fields = ('enfant_id', 'nom', 'prenom', 'age', 'handicap') 
     
 class HandicapEnfantSerializer(serializers.ModelSerializer):
     class Meta:
