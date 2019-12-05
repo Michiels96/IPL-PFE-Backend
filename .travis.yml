@@ -18,6 +18,9 @@ language: python # => 1
       - git add -A
       - git commit -m '[Travis Deploy]'
       - git push https://github.com/pierremichiels/pfebackend.git master
+    branches:
+      only:
+        - master
 
 
 #Explanation for above comments:
