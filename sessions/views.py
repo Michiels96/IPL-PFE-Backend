@@ -3,7 +3,7 @@ from .models import Session, Question, Note
 from .serializers import SessionSerializer, QuestionSerializer, NoteSerializer
 
 class SessionsView(viewsets.ModelViewSet):
-    queryset = Sessions.objects.all()
+    queryset = Session.objects.all()
     serializer_class = SessionSerializer
 
 class QuestionsView(viewsets.ModelViewSet):
