@@ -15,8 +15,7 @@ language: python # => 1
       - echo "hello"
       - python manage.py test
     branches:
-      only:
-        - master
+      - master
 
 
 #Explanation for above comments:
