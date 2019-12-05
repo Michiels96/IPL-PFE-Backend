@@ -4,16 +4,16 @@ language: python # => 1
       - "2.7"
       - "3.7"
     #services: # => 3
-      - mysql
+      # - mysql
     #env: # => 4
-      -DJANGO=2.2.7 DB=sqlite3
+       #-DJANGO=2.2.7 DB=sqlite3
     #install: # => 5
-      - pip install -r requirements.txt
+       #- pip install -r requirements.txt
     #before_script: # => 6
-      - mysql -e 'create database test;' -u root
+       #- mysql -e 'create database test;' -u root
     script: # => 7
       - echo "hello"
-      - python manage.py test
+       #- python manage.py test
 
 #Explanation for above comments:
 #1. By defining “language: python” application is developed in python language.
