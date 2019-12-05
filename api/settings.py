@@ -43,6 +43,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://192.168.0.105:8080',
     'http://109.134.137.173:4200',
     'http://127.0.0.1:8000',
+    'https://pfe-frontend-dev.herokuapp.com',
 ]
 
 
