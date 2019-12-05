@@ -14,8 +14,6 @@ language: python # => 1
     script: # => 7
       - echo "hello"
       - python manage.py test
-    branches:
-      - master
 
 
 #Explanation for above comments:
