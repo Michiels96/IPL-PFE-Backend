@@ -15,4 +15,4 @@ class SessionSerializer(serializers.ModelSerializer):
     enfant_prenom = serializers.CharField(source='enfant.prenom', read_only=True)
     class Meta:
         model = Session
-        fields = ('session_id', 'enfant_prenom', 'enfants', 'date')
+        fields = ('session_id', 'enfant_prenom', 'enfant', 'date')

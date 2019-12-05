@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Professionnel
+#from .models import Professionnel
 
-admin.site.register(Professionnel)
+#admin.site.register(Professionnel)

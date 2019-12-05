@@ -1,15 +1,15 @@
 from rest_framework import serializers
-from .models import Enfants, Handicaps, HandicapEnfant
+from .models import Enfant, Handicap, HandicapEnfant
 
 class HandicapSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Handicaps
+        model = Handicap
         fields = ('handicap_id', 'nom_handicap', 'description')
 
 class EnfantSerializer(serializers.ModelSerializer):
     handicaps = serializers.CharField(source='handicap.nom_handicap', read_only=True)
     class Meta:
-        model = Enfants
+        model = Enfant
         fields = ('enfant_id', 'nom', 'prenom', 'age', 'handicap', 'handicaps') 
     
 class HandicapEnfantSerializer(serializers.ModelSerializer):
