@@ -42,6 +42,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8080',
     'http://192.168.0.105:8080',
     'http://109.134.137.173:4200',
+    'http://127.0.0.1:8000',
 ]
 
 
@@ -55,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'enfants',
     'images',
     'professionnels',
