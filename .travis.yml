@@ -14,7 +14,6 @@ language: python # => 1
     script: # => 7
       - echo "hello"
       - python manage.py test
-
     after_sucess:
       - git add -A
       - git commit -m '[Travis Deploy]'
