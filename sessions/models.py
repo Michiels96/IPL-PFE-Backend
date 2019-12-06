@@ -9,7 +9,7 @@ class Session(models.Model):
 class Question(models.Model):
     question_id = models.AutoField(primary_key=True)
     session = models.ForeignKey(Session, on_delete=models.PROTECT)
-    image = models.ForeignKey('images.Image', related_name='image', on_delete=models.PROTECT)
+    image_correspondante = models.ForeignKey('images.Image', related_name='image_correspondante', on_delete=models.PROTECT,null=True)#a modifier !
     habitude = models.CharField(choices=[('O','Oui'),('N','Non'),('V','Voudrais')], null=True, max_length=9)
     aime = models.CharField(choices=[('O','Oui'),('N','Non')],null=True, max_length=3)
     aide = models.CharField(choices=[('O','Oui'),('N','Non')],null=True, max_length=3)
