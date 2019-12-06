@@ -10,4 +10,4 @@ class ImageSerializer(serializers.ModelSerializer):
     categorie_image = serializers.CharField(source='categorie.libelle', read_only=True)
     class Meta:
         model = Image
-        fields = ('image_id', 'image', 'description', 'categorie', 'categorie_image') 
+        fields = ('image_id', 'description', 'categorie', 'categorie_image') 
