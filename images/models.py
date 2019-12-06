@@ -7,7 +7,7 @@ class Categorie(models.Model):
 
 
 def upload_path(instance, filename):
-    return '.'.join(['images',str(instance.categorie.libelle),filename])
+    return '/'.join(['repertoire',str(instance.categorie.libelle),filename])
 
 class Image(models.Model):
     image_id = models.AutoField(primary_key=True)
