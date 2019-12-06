@@ -13,5 +13,5 @@ class Enfant(models.Model):
 
 class HandicapEnfant(models.Model):
     handicap_enfant_id = models.AutoField(primary_key=True)
-    enfant = models.ForeignKey(Enfant, on_delete=models.PROTECT)
-    handicap = models.ForeignKey(Handicap, on_delete=models.PROTECT)
+    enfant = models.ForeignKey(Enfant, related_name='enfant_h' ,on_delete=models.PROTECT)
+    handicap = models.ForeignKey(Handicap, related_name='handicap_h',on_delete=models.PROTECT, null=True)

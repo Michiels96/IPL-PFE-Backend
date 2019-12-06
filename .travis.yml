@@ -15,6 +15,7 @@ language: python # => 1
       - echo "hello"
       - python manage.py test
 
+
 #Explanation for above comments:
 #1. By defining “language: python” application is developed in python language.
 #2. Test your application in multiple versions of python by defining versions in python hook settings
