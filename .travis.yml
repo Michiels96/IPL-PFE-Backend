@@ -1,28 +1,5 @@
-language: python # => 1
-    python: # => 2
-      - "2.6"
-      - "2.7"
-      - "3.7"
-    #services: # => 3
-      - mysql
-    #env: # => 4
-      -DJANGO=2.2.7 DB=sqlite3
-    #install: # => 5
-      - pip install -r requirements.txt
-    #before_script: # => 6
-      - mysql -e 'create database test;' -u root
-    script: # => 7
-      - echo "hello"
-      - python manage.py test
-
-
-#Explanation for above comments:
-#1. By defining “language: python” application is developed in python language.
-#2. Test your application in multiple versions of python by defining versions in python hook settings
-#3. Define services required for your application ex: elastic search, radis, etc in services.
-#4. Specify your Django version and database to use.
-#5. install application requirements.
-#6. before_script: as name defines this commands will run before running your actual test cases.
-#7. command to run tests.
-
-# numero 3,4 et 6 à modifier
+language: python
+python: 
+   - "3.7"
+script: 
+   - echo "hello"
