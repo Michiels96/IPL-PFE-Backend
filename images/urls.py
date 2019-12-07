@@ -8,7 +8,7 @@ from django.conf import settings
 router = routers.DefaultRouter()
 router.register('images', views.ImageView, basename='image')
 router.register('categories', views.CategorieView, basename='categorie')
-# router.register('repertoire/deplacements', views.DeplacementsView, basename='deplacement')
+#router.register('repertoire/deplacements', views.DeplacementsView)
 # router.register('repertoire/habitation', views.HabitationsView, basename='habitation')
 # router.register('repertoire/loisirs', views.LoisirsView, basename='loisir')
 # router.register('repertoire/nutrition', views.NutritionsView, basename='nutrition')
