@@ -4,6 +4,8 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('enfants', views.EnfantsView, basename='enfant')
+router.register('logged_enfant', views.logged_enfant, basename='logged_enfant')
+router.register('non_logged_enfant', views.non_logged_enfant, basename='non_logged_enfant')
 router.register('handicaps', views.HandicapsView, basename='handicap')
 router.register('handicaps_enfants', views.HandicapsEnfantsView, basename='handicap_enfant')
 

@@ -12,6 +12,12 @@ class Enfant(models.Model):
     age = models.PositiveIntegerField()
     connecte = models.BooleanField()
 
+    def __iter__(self):
+        return [ self.nom, 
+                 self.prenom, 
+                 self.age, 
+                 self.connecte ]
+
 class HandicapEnfant(models.Model):
     handicap_enfant_id = models.AutoField(primary_key=True)
     enfant = models.ForeignKey(Enfant, related_name='enfant_h' ,on_delete=models.PROTECT)

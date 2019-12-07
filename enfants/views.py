@@ -8,6 +8,14 @@ class EnfantsView(viewsets.ModelViewSet):
     queryset = Enfant.objects.all()
     serializer_class = EnfantSerializer
 
+class logged_enfant(viewsets.ModelViewSet):
+    queryset = Enfant.objects.all().filter(connecte="True")
+    serializer_class = EnfantSerializer
+
+class non_logged_enfant(viewsets.ModelViewSet):
+    queryset = Enfant.objects.all().filter(connecte="False")
+    serializer_class = EnfantSerializer
+
 class HandicapsView(viewsets.ModelViewSet):
     queryset = Handicap.objects.all()
     serializer_class = HandicapSerializer
