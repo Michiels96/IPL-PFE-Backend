@@ -7,7 +7,7 @@ class CategorieView(viewsets.ModelViewSet):
     serializer_class = CategorieSerializer
 
 class ImageView(viewsets.ModelViewSet):
-    queryset = Image.objects.all()
+    queryset = Image.objects.all().order_by('image_id')
     serializer_class = ImageSerializer 
 
 class DeplacementsView(viewsets.ModelViewSet):
