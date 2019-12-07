@@ -8,11 +8,7 @@ class CategorieView(viewsets.ModelViewSet):
 
 class ImageView(viewsets.ModelViewSet):
     queryset = Image.objects.all()
-<<<<<<< HEAD
-    serializer_class = ImageSerializer
-=======
     serializer_class = ImageSerializer 
->>>>>>> master
 
 class DeplacementsView(viewsets.ModelViewSet):
     queryset = Image.objects.filter(categorie=1)
