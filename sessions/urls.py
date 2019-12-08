@@ -4,6 +4,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('sessions', views.SessionsView, basename='session')
+router.register('full_sessions', views.FullSessionsView, basename='full_session')
 router.register('questions', views.QuestionsView, basename='question')
 router.register('notes', views.NotesView, basename='note')
 
