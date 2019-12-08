@@ -3,7 +3,7 @@ from .models import Session, Question, Note
 
 
 class NoteSerializer(serializers.ModelSerializer):
-    #prof = serializers.CharField(source='user.email', read_only=True)
+    #prof = serializers.CharField(source='professeur.email', read_only=True)
     class Meta:
         model = Note
         fields = ('note_id', 'professionnel_id','question_id', 'note_aime', 'note_aide', 'note_satisfaction') 
@@ -18,9 +18,10 @@ class QuestionSerializer(serializers.ModelSerializer):
 
 
 class SessionSerializer(serializers.ModelSerializer):
+    enfant_session = serializers.CharField(source='session_enfant', read_only=True)
     class Meta:
         model = Session
-        fields = ('session_id', 'enfant', 'date')
+        fields = ('session_id', 'enfant', 'enfant_session', 'date')
 
 
 class FullSessionSerializer(serializers.ModelSerializer):
