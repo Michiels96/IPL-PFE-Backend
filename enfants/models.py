@@ -10,7 +10,7 @@ class Enfant(models.Model):
     nom = models.CharField(max_length=50)
     prenom = models.CharField(max_length=50)
     age = models.PositiveIntegerField()
-    connecte = models.BooleanField()
+    connecte = models.BooleanField(default=False)
 
     def __iter__(self):
         return [ self.nom, 

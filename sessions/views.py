@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from .models import Session, Question, Note
-from .serializers import SessionSerializer, QuestionSerializer, NoteSerializer
+from .serializers import SessionSerializer, QuestionSerializer, NoteSerializer,FullSessionSerializer
 
 class SessionsView(viewsets.ModelViewSet):
     queryset = Session.objects.all()
@@ -13,3 +13,7 @@ class QuestionsView(viewsets.ModelViewSet):
 class NotesView(viewsets.ModelViewSet):
     queryset = Note.objects.all()
     serializer_class = NoteSerializer 
+
+class FullSessionsView(viewsets.ModelViewSet):
+    queryset = Session.objects.all()
+    serializer_class = FullSessionSerializer
