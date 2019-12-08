@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Session(models.Model):
     session_id = models.AutoField(primary_key=True)
-    enfant = models.ForeignKey('enfants.HandicapEnfant', related_name='enfant_session', on_delete=models.PROTECT)
+    enfant = models.ForeignKey('enfants.HandicapEnfant', related_name='session_enfant', on_delete=models.PROTECT)
     date = models.DateTimeField(auto_now_add=True)
 
 class Question(models.Model):
@@ -17,7 +17,7 @@ class Question(models.Model):
 
 class Note(models.Model):
     note_id = models.AutoField(primary_key=True)
-    professionnel_id =  models.ForeignKey(User, related_name='user', on_delete=models.PROTECT)
+    professionnel_id =  models.ForeignKey(User, related_name='professeur', on_delete=models.PROTECT)
     question_id = models.ForeignKey(Question, on_delete=models.PROTECT) 
     note_aime = models.CharField(max_length=255, null=True)
     note_aide = models.CharField(max_length=255, null=True)
