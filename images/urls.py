@@ -14,7 +14,7 @@ router.register('loisirs', views.LoisirsView, basename='loisir')
 router.register('nutrition', views.NutritionsView, basename='nutrition')
 router.register('relationscom', views.RelationsComView, basename='relationcom')
 router.register('responsabilites', views.ResponsabilitesView, basename='responsabilite')
-router.register('soinspersonnnels', views.SoinsPersonnelsView, basename='soinspersonnel')
+router.register('soinspersonnels', views.SoinsPersonnelsView, basename='soinspersonnel')
 
 urlpatterns = [
     path('', include(router.urls))
