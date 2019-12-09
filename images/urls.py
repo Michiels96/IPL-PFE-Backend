@@ -8,6 +8,7 @@ from django.conf import settings
 router = routers.DefaultRouter()
 router.register('images', views.ImageView, basename='image')
 router.register('categories', views.CategorieView, basename='categorie')
+<<<<<<< HEAD
 #router.register('repertoire/deplacements', views.DeplacementsView)
 # router.register('repertoire/habitation', views.HabitationsView, basename='habitation')
 # router.register('repertoire/loisirs', views.LoisirsView, basename='loisir')
@@ -15,6 +16,15 @@ router.register('categories', views.CategorieView, basename='categorie')
 # router.register('repertoire/relationscom', views.RelationsComView, basename='relationcom')
 # router.register('repertoire/responsabilites', views.ResponsabilitesView, basename='responsabilite')
 # router.register('repertoire/soinspersonnnels', views.SoinsPersonnelsView, basename='soinspersonnel')
+=======
+router.register('deplacements', views.DeplacementsView, basename='deplacement')
+router.register('habitation', views.HabitationsView, basename='habitation')
+router.register('loisirs', views.LoisirsView, basename='loisir')
+router.register('nutrition', views.NutritionsView, basename='nutrition')
+router.register('relationscom', views.RelationsComView, basename='relationcom')
+router.register('responsabilites', views.ResponsabilitesView, basename='responsabilite')
+router.register('soinspersonnels', views.SoinsPersonnelsView, basename='soinspersonnel')
+>>>>>>> master
 
 
 urlpatterns = [
