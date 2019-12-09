@@ -1,9 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+from enfants.models import Enfant
 
 class Session(models.Model):
     session_id = models.AutoField(primary_key=True)
-    enfant = models.ForeignKey('enfants.HandicapEnfant', related_name='session_enfant', on_delete=models.PROTECT)
+    enfant = models.ForeignKey(Enfant, related_name='session_enfant', on_delete=models.PROTECT)
     date = models.DateTimeField(auto_now_add=True)
 
 class Question(models.Model):
