@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 from django.contrib.auth.models import User
 from enfants.models import Enfant
 
@@ -6,6 +7,9 @@ class Session(models.Model):
     session_id = models.AutoField(primary_key=True)
     enfant = models.ForeignKey(Enfant, related_name='session_enfant', on_delete=models.PROTECT)
     date = models.DateTimeField(auto_now_add=True)
+
+    def date_actuelle(self):
+        return (datetime.now() - self.date).days <= 0
 
 class Question(models.Model):
     question_id = models.AutoField(primary_key=True)
