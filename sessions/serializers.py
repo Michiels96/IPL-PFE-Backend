@@ -39,5 +39,11 @@ class EnfantFullSessionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Enfant
         fields = ('enfant_id', 'nom', 'prenom', 'age', 'connecte','session_enfant')
+
+class EnfantLastFullSessionSerializer(serializers.ModelSerializer):
+    session_enfant = SessionSerializer(many=False,read_only=True)
+    class Meta:
+        model = Enfant
+        fields = ('enfant_id', 'nom', 'prenom', 'age', 'connecte','session_enfant')
     
 

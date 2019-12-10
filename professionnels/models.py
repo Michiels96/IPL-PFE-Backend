@@ -1,14 +1,17 @@
-# from django.db import models
+from django.db import models
+from django.contrib.auth.models import User
 
-# class Professionnel(models.Model):
-#     professionnel_id = models.AutoField(primary_key=True)
-#     mot_de_passe = models.CharField(max_length=42) #comment gerer le fait que ca soit un mdp ?
-#     nom = models.CharField(max_length=42)
-#     prenom = models.CharField(max_length=42)
-#     email = models.CharField(max_length=100,null=True)
+class Professionnel(models.Model):
+    professionnel_id = models.AutoField(primary_key=True)
+    nom = models.CharField(max_length=42)
+    prenom = models.CharField(max_length=42)
+    profession = models.CharField(max_length=42, choices=[('Erg','Ergothérapeute'),('Psy','Psychologue'),('Ed','Educateur'),('Ki','Kinésithérapeute'),('En','Enseignant'),('Au','Autre')],null=True)
+    autre_profession = models.CharField(max_length=42,null=True)
+    telephone = models.CharField(max_length=12)
+    user = models.IntegerField(null=True)
 
-#     def __str__(self):
-#         return self.nom
+    def __str__(self):
+        return self.nom
 
 
 
