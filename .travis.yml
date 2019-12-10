@@ -1,5 +1,6 @@
-language: python
-python:
-- '3.7'
 script:
 - echo "hello"
+deploy:
+  provider: heroku
+  api_key:
+    secure: iFG5JQXUAT6rk5UWoU3CYcqmlHnez7fihvtWJzxTMJYs4WwAzxYlcyWjyJ5NWyohvUVAOnPHe68zbZsrNthkqsC8pMpZlMTS2sL/RiKM9hpjDA9PQMDekoqTXQh2ISYN4ckqviNUZloRFDuYGBbuMtF53Qd1hOucbKI/LRjomCcwBcHR6bja2k4xsiagEXJBW4ymJfjS/EPH+FpI/P+N80J0ngVkGo5CPYH6wm/JFCLUQ8jtNiMKWndMdgktXnH9tUhVbVAdhqnbD9Gg60nQuHPmRyfw+Atd1USvFe/6s0LqpPFfQ+SbbAAiqILIZEHSY6Jlfh0r1iRWwnRPtPNsMA11l89/TmdALafISxMA89+zf+wkFkSTK06XXMFAYiNQx8q9X8OBR8vi6uKTx9RF28/SfTSMG6myy354CsN1jFlxWkVpajJFWJ9URgaozQCKKUSaMcz51Y95zoGVhdXYiJPoNI6JDBUT19azdGEjvx16SFhjK42yXTYsGeR6Tyh7KV5bHHg0WpL11o2lr+mF2YHxEC/YOoCjPnPJLZEDHIuFgB5hLrQSBm+KwPm6sdSpAEnG5LaS1lZ9VzHy66y2z5I8+7Z12d1/2bYpc/0bHwCzMAgxdiZShEU2bhiQyOYZ0lNP5lWfkU/JiGV/1h28xhSjjRfMVCyJ7w/kjW6LPZc=
