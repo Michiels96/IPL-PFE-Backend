@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from .models import Session, Question, Note
+from enfants.models import Enfant
+from enfants.serializers import EnfantSerializer
 
 
 class NoteSerializer(serializers.ModelSerializer):
@@ -18,14 +20,24 @@ class QuestionSerializer(serializers.ModelSerializer):
 
 
 class SessionSerializer(serializers.ModelSerializer):
-    enfant_session = serializers.CharField(source='session_enfant', read_only=True)
+    #enfant_session = serializers.CharField(source='session_enfant', read_only=True)
     class Meta:
         model = Session
-        fields = ('session_id', 'enfant', 'enfant_session', 'date')
+        fields = ('session_id', 'enfant', 'date')
 
 
 class FullSessionSerializer(serializers.ModelSerializer):
     question_session = QuestionSerializer(many=True, read_only=True)
+    enfant = EnfantSerializer( read_only=True)
     class Meta: 
         model = Session
         fields = ('session_id', 'enfant', 'date','question_session')
+
+
+class EnfantFullSessionSerializer(serializers.ModelSerializer):
+    session_enfant = FullSessionSerializer(many=True, read_only=True)
+    class Meta:
+        model = Enfant
+        fields = ('enfant_id', 'nom', 'prenom', 'age', 'connecte','session_enfant')
+    
+
