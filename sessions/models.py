@@ -3,10 +3,31 @@ from datetime import datetime
 from django.contrib.auth.models import User
 from enfants.models import Enfant
 
+class Mandataire(models.Model):
+    mandataire_id = models.AutoField(primary_key=True) 
+    mandataire = models.CharField(choices=[('Prof','Professionnel'),('P','Parents'),('T','Tuteur'),('E','Enfant'),('M','Medecin'),('AP','Autre Professionnel'),('A','Autre')], null=True,max_length=20)
+    autre_mandataire = models.CharField(max_length=50)
+    nom = models.CharField(max_length=50,null=True)
+    prenom = models.CharField(max_length=50,null=True)
+    spécialité = models.CharField(max_length=50,null=True)
+    téléphone = models.CharField(max_length=50,null=True)
+    email = models.CharField(max_length=50,null=True)
+    date_demande = models.DateTimeField()
+    objet = models.TextField()
+
+
+
 class Session(models.Model):
     session_id = models.AutoField(primary_key=True)
     enfant = models.ForeignKey(Enfant, related_name='session_enfant', on_delete=models.PROTECT)
     date = models.DateTimeField(auto_now_add=True)
+    mandataire = models.ForeignKey(Mandataire, related_name='image_correspondante', on_delete=models.PROTECT,null=True)
+
+    def __iter__(self):
+        return { self.enfant, 
+                 self.date, 
+                 self.mandataire }
+
 
     def date_actuelle(self):
         return (datetime.now() - self.date).days <= 0

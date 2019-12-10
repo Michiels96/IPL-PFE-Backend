@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from .models import Session, Question, Note
 from enfants.models import Enfant
-from .serializers import SessionSerializer, QuestionSerializer, NoteSerializer,FullSessionSerializer,EnfantFullSessionSerializer
+from .serializers import SessionSerializer, QuestionSerializer, NoteSerializer,FullSessionSerializer,EnfantFullSessionSerializer,EnfantLastFullSessionSerializer
 
 class SessionsView(viewsets.ModelViewSet):
     queryset = Session.objects.all()
@@ -22,3 +22,7 @@ class FullSessionsView(viewsets.ModelViewSet):
 class EnfantFullSessionsView(viewsets.ModelViewSet):
     queryset = Enfant.objects.all()
     serializer_class = EnfantFullSessionSerializer
+
+class EnfantLastFullSessionsView(viewsets.ModelViewSet):
+    queryset = Enfant.objects.last()
+    serializer_class = EnfantLastFullSessionSerializer
