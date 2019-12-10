@@ -9,6 +9,7 @@ router.register('enfant_full_sessions', views.EnfantFullSessionsView, basename='
 router.register('enfant_last_full_sessions', views.EnfantLastFullSessionsView, basename='enfant_last_full_sessions')
 router.register('questions', views.QuestionsView, basename='question')
 router.register('notes', views.NotesView, basename='note')
+router.register('mandataires', views.MandatairesView, basename='mandataire')
 
 urlpatterns = [
     path('', include(router.urls))

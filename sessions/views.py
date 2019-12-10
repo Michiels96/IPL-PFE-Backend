@@ -26,3 +26,7 @@ class EnfantFullSessionsView(viewsets.ModelViewSet):
 class EnfantLastFullSessionsView(viewsets.ModelViewSet):
     queryset = Enfant.objects.last()
     serializer_class = EnfantLastFullSessionSerializer
+
+class MandatairesView(viewsets.ModelViewSet):
+    queryset = Mandataire.objects.last()
+    serializer_class = MandataireSerializer

@@ -1,8 +1,12 @@
 from rest_framework import serializers
-from .models import Session, Question, Note
+from .models import Session, Question, Note, Mandataire
 from enfants.models import Enfant
 from enfants.serializers import EnfantSerializer
 
+class MandataireSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Mandataire
+        fields = ('mandataire_id', 'mandataire', 'autre_mandataire', 'nom', 'prenom', 'spécialité', 'téléphone', 'email', 'date_demande', 'objet')
 
 class NoteSerializer(serializers.ModelSerializer):
     #prof = UserSerializer(read_only=True)
