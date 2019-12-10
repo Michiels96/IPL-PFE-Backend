@@ -33,6 +33,7 @@ class SessionSerializer(serializers.ModelSerializer):
 class FullSessionSerializer(serializers.ModelSerializer):
     question_session = QuestionSerializer(many=True, read_only=True)
     enfant = EnfantSerializer( read_only=True)
+    date = serializers.DateTimeField(format='%d/%m/%Y %H:%M:%S')
     class Meta: 
         model = Session
         fields = ('session_id', 'enfant', 'date','question_session')
