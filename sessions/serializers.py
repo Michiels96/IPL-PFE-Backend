@@ -4,6 +4,7 @@ from enfants.models import Enfant
 from enfants.serializers import EnfantSerializer
 
 class MandataireSerializer(serializers.ModelSerializer):
+    date_demande = serializers.DateField(format='%d/%m/%Y')
     class Meta:
         model = Mandataire
         fields = ('mandataire_id', 'mandataire', 'autre_mandataire', 'nom', 'prenom', 'spécialité', 'téléphone', 'email', 'date_demande', 'objet')
