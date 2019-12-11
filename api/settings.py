@@ -37,6 +37,8 @@ DEBUG = True
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
+CORS_ORIGIN_ALLOW_ALL=True
+
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200',
     'http://localhost:8080',
@@ -44,7 +46,13 @@ CORS_ORIGIN_WHITELIST = [
     'http://109.134.137.173:4200',
     'http://127.0.0.1:8000',
     'https://pfe-frontend-dev.herokuapp.com',
+    'https://pfe-frontend-dev.herokuapp.com/prof/login/',
+    'https://pfe-back-dev.herokuapp.com/enfant/non_logged_enfant/'
 ]
+
+# CORS_ORIGIN_REGEX_WHITELIST = [
+#     r"^https://pfe-back-dev.herokuapp.com/\.*$",
+# ]
 
 
 # Application definition
