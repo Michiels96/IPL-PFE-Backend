@@ -46,8 +46,8 @@ CORS_ORIGIN_WHITELIST = [
     'http://109.134.137.173:4200',
     'http://127.0.0.1:8000',
     'https://pfe-frontend-dev.herokuapp.com',
-    'https://pfe-frontend-dev.herokuapp.com/prof/login/',
-    'https://pfe-back-dev.herokuapp.com/enfant/non_logged_enfant/'
+    #'https://pfe-frontend-dev.herokuapp.com/prof/login/',
+    #'https://pfe-back-dev.herokuapp.com/enfant/non_logged_enfant/'
 ]
 
 # CORS_ORIGIN_REGEX_WHITELIST = [
