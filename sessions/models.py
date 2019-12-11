@@ -5,7 +5,7 @@ from enfants.models import Enfant
 
 class Mandataire(models.Model):
     mandataire_id = models.AutoField(primary_key=True) 
-    mandataire = models.CharField(choices=[('Prof','Professionnel'),('P','Parents'),('PE', 'Père'),('ME', 'Mère'),('T','Tuteur'),('E','Enfant'),('M','Medecin'),('AP','Autre Professionnel'),('A','Autre')], null=True,max_length=20)
+    mandataire = models.CharField(choices=[('Prof','Professionnel'),('P','Parents'),('PE', 'Père'),('ME', 'Mère'),('T','Tuteur'),('E','Enfant'),('M','Medecin'),('AP','Autre Professionnel'),('A','Autre')],max_length=20)
     autre_mandataire = models.CharField(max_length=50, null=True)
     nom = models.CharField(max_length=50,null=True)
     prenom = models.CharField(max_length=50,null=True)
@@ -14,8 +14,6 @@ class Mandataire(models.Model):
     email = models.CharField(max_length=50,null=True)
     date_demande = models.DateField()
     objet = models.TextField()
-
-
 
 class Session(models.Model):
     session_id = models.AutoField(primary_key=True)
