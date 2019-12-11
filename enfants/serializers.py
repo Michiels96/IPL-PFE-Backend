@@ -9,7 +9,7 @@ class HandicapSerializer(serializers.ModelSerializer):
 class EnfantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Enfant
-        fields = ('enfant_id', 'nom', 'prenom', 'age', 'connecte', 'langue', 'scolarité', 'niveau_scolaire', 'type_enseignement', 'dominance', 'besoin_particulier', 'autre_besoin_particulier') 
+        fields = ('enfant_id', 'nom', 'prenom', 'age', 'connecte', 'date_naissance','langue', 'scolarité', 'niveau_scolaire', 'type_enseignement', 'dominance', 'besoin_particulier', 'autre_besoin_particulier') 
     
 class HandicapEnfantSerializer(serializers.ModelSerializer):
     prenom_enfant = serializers.CharField(source='enfant.prenom', read_only=True)
