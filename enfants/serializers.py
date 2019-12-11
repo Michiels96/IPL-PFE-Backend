@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Enfant, Handicap, HandicapEnfant
+from .models import Enfant, Handicap, HandicapEnfant,InfoSupplementaire,PersonneContact
 
 class HandicapSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,6 +10,16 @@ class EnfantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Enfant
         fields = ('enfant_id', 'nom', 'prenom', 'age', 'connecte') 
+
+class InfoSupplementaireSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = InfoSupplementaire
+        fields = ('enfant', 'date_naissance', 'langue', 'scolarite', 'niveau_scolaire','type_enseignement','dominance','besoin_particulier','autre_besoin_particulier')
+
+class PersonneContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PersonneContact
+        fields = ('personne_id', 'nom', 'prenom', 'telephone', 'email','relation','autre_relation','enfant')
     
 class HandicapEnfantSerializer(serializers.ModelSerializer):
     prenom_enfant = serializers.CharField(source='enfant.prenom', read_only=True)
