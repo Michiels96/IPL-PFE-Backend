@@ -6,3 +6,5 @@ djangorestframework
 django-cors-headers
 python-dotenv
 whitenoise
+django-phonenumber-field
+phonenumbers
