@@ -15,7 +15,7 @@ class Enfant(models.Model):
     
 
 class InfoSupplementaire(models.Model):
-    info_id = models.AutoField(primary_key=True)
+    info_supp_id = models.AutoField(primary_key=True)
     enfant = models.ForeignKey(Enfant, related_name='info_enfant', on_delete=models.PROTECT)
     date_naissance = models.DateTimeField(auto_now_add=True)
     langue = models.CharField(max_length=255, null=True)
