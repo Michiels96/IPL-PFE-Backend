@@ -46,6 +46,10 @@ CORS_ORIGIN_WHITELIST = [
     'https://pfe-frontend-dev.herokuapp.com',
 ]
 
+CORS_ORIGIN_REGEX_WHITELIST = [
+    r"https://pfe-back-dev.herokuapp.com.*$",
+]
+
 
 # Application definition
 
