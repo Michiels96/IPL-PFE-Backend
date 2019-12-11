@@ -12,7 +12,7 @@ class Enfant(models.Model):
     prenom = models.CharField(max_length=50)
     age = models.PositiveIntegerField(null=True)
     connecte = models.BooleanField(default=False)
-    date_naissance = models.DateField(auto_now=False, auto_now_add=False)
+    #date_naissance = models.DateField(auto_now=False, auto_now_add=False,null=True)
     langue = models.CharField(max_length=255, null=True)
     scolarité = models.CharField(choices=[('EO','Enseignement ordinaire'),('ES','Enseignement spécialisé'),('EI','Enseignement en intégration')], null=True, max_length=50)
     niveau_scolaire = models.CharField(max_length=255)
