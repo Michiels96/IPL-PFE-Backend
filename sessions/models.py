@@ -12,7 +12,7 @@ class Mandataire(models.Model):
     spécialité = models.CharField(max_length=50,null=True)
     téléphone = models.CharField(max_length=50,null=True)
     email = models.CharField(max_length=50,null=True)
-    date_demande = models.DateTimeField()
+    date_demande = models.DateField()
     objet = models.TextField()
 
 
