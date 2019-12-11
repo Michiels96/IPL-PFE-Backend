@@ -44,11 +44,12 @@ CORS_ORIGIN_WHITELIST = [
     'http://109.134.137.173:4200',
     'http://127.0.0.1:8000',
     'https://pfe-frontend-dev.herokuapp.com',
+    'https://pfe-frontend-dev.herokuapp.com/prof/login/',
 ]
 
-CORS_ORIGIN_REGEX_WHITELIST = [
-    r"https://pfe-back-dev.herokuapp.com.*$",
-]
+# CORS_ORIGIN_REGEX_WHITELIST = [
+#     r"^https://pfe-back-dev.herokuapp.com/\.*$",
+# ]
 
 
 # Application definition
