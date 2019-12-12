@@ -14,7 +14,7 @@ class EnfantSerializer(serializers.ModelSerializer):
 class InfoSupplementaireSerializer(serializers.ModelSerializer):
     class Meta:
         model = InfoSupplementaire
-        fields = ('info_supp_id','enfant', 'date_naissance', 'langue', 'scolarite', 'niveau_scolaire','type_enseignement','dominance','besoin_particulier','autre_besoin_particulier')
+        fields = ('info_id','enfant', 'date_naissance', 'langue', 'scolarite', 'niveau_scolaire','type_enseignement','dominance','besoin_particulier','autre_besoin_particulier')
 
 class PersonneContactSerializer(serializers.ModelSerializer):
     class Meta:
