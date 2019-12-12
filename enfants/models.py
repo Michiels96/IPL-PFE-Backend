@@ -1,5 +1,4 @@
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
 
 class Handicap(models.Model):
     handicap_id = models.AutoField(primary_key=True)
@@ -28,7 +27,7 @@ class PersonneContact(models.Model):
     personne_id = models.AutoField(primary_key=True)
     nom = models.CharField(max_length=50)
     prenom = models.CharField(max_length=50)
-    telephone = PhoneNumberField(null=False, blank=False, unique=True)
+    telephone = models.IntegerField(null=False, blank=False)
     email = models.EmailField(max_length=250, null=True)
     relation = models.CharField(choices=[('P','Père'),('M','Mère'),('T','Tuteur'),('F','Frère'),('S','Soeur'),('A','Autre')], max_length=20)
     autre_relation = models.CharField(max_length=50,null=True)
