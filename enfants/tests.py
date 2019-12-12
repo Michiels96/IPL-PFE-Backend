@@ -1,12 +1,12 @@
 from django.test import TestCase
-from .models import *
+from .models import Enfant, Handicap, HandicapEnfant
 
 class EnfantsTest(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        Enfant.objects.create(enfant_id=1, nom='bla', prenom='blabla', age=12, connecte='False')
-        Handicap.objects.create(handicap_id=1, nom_handicap='mental', description='trisomie 21')
+        Enfant.objects.create(enfant_id=1, nom='Jean', prenom='Pierre', age=12, connecte='False')
+        Handicap.objects.create(handicap_id=1, nom_handicap='aveugle', description='ne voit pas')
         HandicapEnfant.objects.create(handicap_enfant_id=1, enfant=Enfant.objects.get(enfant_id=1), handicap=Handicap.objects.get(handicap_id=1))
 
     def test_nom_max_length(self):
