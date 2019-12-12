@@ -15,8 +15,7 @@ class Enfant(models.Model):
     
 
 class InfoSupplementaire(models.Model):
-    info_supp_id = models.AutoField(primary_key=True)
-    enfant = models.ForeignKey(Enfant, related_name='info_enfant', on_delete=models.PROTECT)
+    enfant = models.OneToOneField(Enfant, related_name='info_enfant', on_delete=models.CASCADE, primary_key=True)
     date_naissance = models.DateTimeField(auto_now_add=True)
     langue = models.CharField(max_length=255, null=True)
     scolarite = models.CharField(choices=[('EO','Enseignement ordinaire'),('ES','Enseignement spécialisé'),('EI','Enseignement en intégration')], null=True, max_length=50)
@@ -35,9 +34,9 @@ class PersonneContact(models.Model):
     email = models.EmailField(max_length=250, null=True)
     relation = models.CharField(choices=[('P','Père'),('M','Mère'),('T','Tuteur'),('F','Frère'),('S','Soeur'),('A','Autre')], max_length=20)
     autre_relation = models.CharField(max_length=50,null=True)
-    enfant = models.ForeignKey(Enfant, related_name='enfant', on_delete=models.PROTECT)
+    enfant = models.ForeignKey(Enfant, related_name='enfant', on_delete=models.CASCADE)
 
 class HandicapEnfant(models.Model):
     handicap_enfant_id = models.AutoField(primary_key=True)
-    enfant = models.ForeignKey(Enfant, related_name='enfant_h' ,on_delete=models.PROTECT)
-    handicap = models.ForeignKey(Handicap, related_name='handicap_h',on_delete=models.PROTECT, null=True)
+    enfant = models.ForeignKey(Enfant, related_name='enfant_h' ,on_delete=models.CASCADE)
+    handicap = models.ForeignKey(Handicap, related_name='handicap_h',on_delete=models.CASCADE, null=True)

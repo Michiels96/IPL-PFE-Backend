@@ -12,9 +12,10 @@ class EnfantSerializer(serializers.ModelSerializer):
         fields = ('enfant_id', 'nom', 'prenom', 'age', 'connecte') 
 
 class InfoSupplementaireSerializer(serializers.ModelSerializer):
+    enfant = EnfantSerializer( read_only=True)
     class Meta:
         model = InfoSupplementaire
-        fields = ('info_supp_id','enfant', 'date_naissance', 'langue', 'scolarite', 'niveau_scolaire','type_enseignement','dominance','besoin_particulier','autre_besoin_particulier')
+        fields = ('enfant', 'date_naissance', 'langue', 'scolarite', 'niveau_scolaire','type_enseignement','dominance','besoin_particulier','autre_besoin_particulier')
 
 class PersonneContactSerializer(serializers.ModelSerializer):
     class Meta:
