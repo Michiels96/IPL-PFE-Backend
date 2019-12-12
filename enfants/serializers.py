@@ -12,7 +12,7 @@ class EnfantSerializer(serializers.ModelSerializer):
         fields = ('enfant_id', 'nom', 'prenom', 'age', 'connecte') 
 
 class InfoSupplementaireSerializer(serializers.ModelSerializer):
-    enfant = EnfantSerializer( read_only=True)
+    date_naissance = serializers.DateField(format='%d/%m/%Y')
     class Meta:
         model = InfoSupplementaire
         fields = ('enfant', 'date_naissance', 'langue', 'scolarite', 'niveau_scolaire','type_enseignement','dominance','besoin_particulier','autre_besoin_particulier')
