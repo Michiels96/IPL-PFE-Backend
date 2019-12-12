@@ -12,7 +12,6 @@ class Enfant(models.Model):
     prenom = models.CharField(max_length=50)
     age = models.PositiveIntegerField(null=True)
     connecte = models.BooleanField(default=False)
-    
 
 class InfoSupplementaire(models.Model):
     enfant = models.OneToOneField(Enfant, related_name='info_enfant', on_delete=models.CASCADE, primary_key=True)
