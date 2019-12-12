@@ -48,4 +48,3 @@ class Note(models.Model):
     note_satisfaction = models.CharField(max_length=255, null=True)
 
     
-
