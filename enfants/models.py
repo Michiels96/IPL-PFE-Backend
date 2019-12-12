@@ -15,12 +15,7 @@ class Enfant(models.Model):
     
 
 class InfoSupplementaire(models.Model):
-<<<<<<< HEAD
-    info_id = models.AutoField(primary_key=True)
-    enfant = models.ForeignKey(Enfant, related_name='info_enfant', on_delete=models.PROTECT)
-=======
     enfant = models.OneToOneField(Enfant, related_name='info_enfant', on_delete=models.CASCADE, primary_key=True)
->>>>>>> e2d04e8ecd26cda8f297b23623bde4d5c8e5fe2e
     date_naissance = models.DateTimeField(auto_now_add=True)
     langue = models.CharField(max_length=255, null=True)
     scolarite = models.CharField(choices=[('EO','Enseignement ordinaire'),('ES','Enseignement spécialisé'),('EI','Enseignement en intégration')], null=True, max_length=50)
