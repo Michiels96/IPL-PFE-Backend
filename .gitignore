@@ -1,1 +1,6 @@
+**/__pycache__/
+.vscode/
+bin/
+lib*
+pyvenv.cfg
 .env
