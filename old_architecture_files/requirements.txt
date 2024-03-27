@@ -1,3 +1,7 @@
+gunicorn
+django-heroku
+requests
+
 django
 mysqlclient
 python-dotenv

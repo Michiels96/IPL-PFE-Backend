@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
-import dj_database_url
+#import django_heroku
+#import dj_database_url
 import dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -42,10 +42,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200',
     'http://localhost:8080',
-    'http://192.168.0.105:8080',
-    'http://109.134.137.173:4200',
     'http://127.0.0.1:8000',
-    'https://pfe-frontend-dev.herokuapp.com',
+    'http://192.168.1.50:8000',
 ]
 
 
@@ -105,7 +103,20 @@ WSGI_APPLICATION = 'api.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "OPTIONS": {
+            "init_command": os.environ.get("DB_ENGINE"),
+            "host": os.environ.get("DB_HOST"),
+            "port": int(os.environ.get("DB_PORT")),
+            "database": os.environ.get("DB_DB"),
+            "user": os.environ.get("DB_USER"),
+            "password": os.environ.get("DB_PASSWORD")
+        },
+    }
+}
 
 
 # Password validation
@@ -152,9 +163,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR,'images')
 MEDIA_URL = '//'
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 
-del DATABASES['default']['OPTIONS']['sslmode']
+#del DATABASES['default']['OPTIONS']['sslmode']
 
 

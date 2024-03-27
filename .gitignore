@@ -4,3 +4,6 @@ bin/
 lib*
 pyvenv.cfg
 .env
+venv/
+launch_scripts/
+*.sh
